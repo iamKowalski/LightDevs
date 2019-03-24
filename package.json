@@ -1,0 +1,21 @@
+{
+  "name": "light_devs",
+  "version": "1.0.0",
+  "description": "Bot do servidor Light Devs",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "dotenv": "^7.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node indexjs"
+  },
+  "author": "Kowalski",
+  "license": "ISC",
+  "keywords": [
+    "discord.js",
+    "Light Devs"
+  ]
+}
