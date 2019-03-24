@@ -1,5 +1,6 @@
 const { Client, Collection } = require('discord.js');
 const Fs = require('fs')
+const { MongoDB } = require('./database')
 
 module.exports = class Light_Devs extends Client {
     constructor(options = {}) {
@@ -9,6 +10,7 @@ module.exports = class Light_Devs extends Client {
 
         this.initListeners('./events');
         this.initCommands('./commands')
+        this.initializeDatabase(MongoDB, { useNewUrlParser: true })
     }
 
     initListeners(path) {
@@ -47,6 +49,16 @@ module.exports = class Light_Devs extends Client {
                 } catch (error) {
                     console.error(error);
                 }
+            })
+    }
+
+    initializeDatabase(DBWrapper, options = {}) {
+        this.database = new DBWrapper(options)
+        this.database.connect()
+            .then(() => console.log('( > ) | Conectado ao banco de dados!'))
+            .catch(e => {
+                console.log(e.message)
+                this.database = null
             })
     }
 

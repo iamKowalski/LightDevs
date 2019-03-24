@@ -5,7 +5,11 @@
   "main": "index.js",
   "dependencies": {
     "discord.js": "^11.4.2",
-    "dotenv": "^7.0.0"
+    "dotenv": "^7.0.0",
+    "moment": "^2.24.0",
+    "moment-duration-format": "^2.2.2",
+    "mongoose": "^5.4.19",
+    "transform-props": "^1.0.1"
   },
   "devDependencies": {},
   "scripts": {
